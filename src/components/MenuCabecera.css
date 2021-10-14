@@ -1,0 +1,23 @@
+.header {
+    display: flex;    
+    justify-content:space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.header-link-active {
+    text-decoration: underline;
+}
+
+.header-link {
+    
+
+}
+
+.option-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option {
+    padding: 1rem;
+}

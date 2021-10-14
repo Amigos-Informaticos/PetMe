@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import logoCabecera from '../assets/dog_bone.png';
-import '../css/hamburger.css';
 import HamburgerButton from './HamburgerButton';
 import './MenuCabecera.css';
 

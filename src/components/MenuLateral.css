@@ -1,0 +1,43 @@
+.panel{
+    position: fixed;
+    z-index: 2;    
+    bottom:0;
+    top:10vh;
+    left:0;
+    right:0;    
+    background-color: #282c34;
+    width: 30%;
+    transform:translate(-100%,0);
+    opacity: 0;
+    transition:transform 0.5s ease, opacity 0.8s ease;
+}
+
+.panel.is-active {
+    transform: translate(0,0);    
+    opacity: 1;    
+}
+
+.nav-menu {
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+
+}
+
+.nav-menu > a {
+    text-decoration: none;
+    padding: 1rem;
+    width: inherit;
+    display: block;
+    font-size:1.5rem;
+    color:#fff;
+    transition: all 0.3s ease;
+}
+
+.nav-menu > a:hover {
+    font-weight: bold;
+    color:white;   
+}

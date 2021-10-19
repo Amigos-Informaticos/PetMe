@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Message = ({msg, backgroundColor}) => {
+const Message = ({msg, backgroundColor}) => {
     let styles = {
         padding: '1rem',
         marginBottom: '1rem',
@@ -16,3 +16,10 @@ export const Message = ({msg, backgroundColor}) => {
         </div>
     )
 }
+
+Message.propTypes = {
+    msg: PropTypes.string,
+    backgroundColor: PropTypes.string
+};
+
+export {Message};

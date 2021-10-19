@@ -5,7 +5,8 @@ export const useForm = (initialForm, validateForm, endpoint = '') => {
   const [form, setForm] = useState(initialForm);
   const [error, setError] = useState({});
   const [loading, setLoading] = useState(false);
-  const [response, setResponse] = useState(null); 
+  const [response, setResponse] = useState(null);
+  const [statusCode, setStatusCode] = useState(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;    
@@ -29,7 +30,7 @@ export const useForm = (initialForm, validateForm, endpoint = '') => {
     if (Object.keys(error).length === 0) {
       setLoading(true);
       connection()
-        .post(`http://amigosinformaticos.ddns.net:42070/${endpoint}`, {
+        .post(`https://amigosinformaticos.ddns.net:42070/${endpoint}`, {
           headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
@@ -37,7 +38,8 @@ export const useForm = (initialForm, validateForm, endpoint = '') => {
           },
           body: form,
         })
-        .then(() => {
+        .then((json) => {
+          setStatusCode(json.status);
           setLoading(false);
           setResponse(true);
           setForm(initialForm);
@@ -50,6 +52,7 @@ export const useForm = (initialForm, validateForm, endpoint = '') => {
     error,
     loading,
     response,
+    statusCode,
     handleChange,
     handleBlur,
     handleSubmit,

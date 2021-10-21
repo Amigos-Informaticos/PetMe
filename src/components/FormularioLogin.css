@@ -1,0 +1,52 @@
+.header-login {
+    width: 80%;    
+}
+
+.header-login h2 {
+    text-align: start;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid black;
+    border-radius: 25px;
+    min-height: 80%;
+    width: 50%;
+}
+
+.form-login {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 30px 44px 30px 44px;
+
+    
+}
+
+.form-login .input[type="email"], .form-login .input[type="password"] {
+    grid-column: span 2;
+}
+
+.button-container {
+    margin-top: 2rem;
+    grid-column: span 2;
+    display:flex;
+    flex-flow: row nowrap;
+    flex-grow: 0;    
+    justify-content: center;
+    align-items: center;
+}
+
+.link-signup {
+    color: #FF8B00;   
+}
+
+.button-signup {
+    border-radius: 15px;
+    background-color: #FFE268;
+    width: 252px;
+    height: 44px;    
+}

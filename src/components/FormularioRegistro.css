@@ -1,0 +1,48 @@
+.header-signup {    
+    width: 80%;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;    
+    
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 70%;
+}
+
+.form-signup {    
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 25px 40px 25px 40px 25px 40px 25px 40px 25px 40px;
+}
+
+.form-signup .input[type="email"], .form-signup .input[type="password"], .form-signup .input[type="text"] {
+    grid-column: span 2;
+}
+
+.input[type="text"].col-1 {
+    grid-column: span 1;
+}
+
+.button-container {
+    margin-top: 2rem;
+    grid-column: span 2;
+    display:flex;
+    flex-grow: 0;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+    grid-column: span 2;
+}

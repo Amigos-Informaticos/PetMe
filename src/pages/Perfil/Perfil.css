@@ -1,0 +1,30 @@
+.perfil {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.2fr 2fr;
+    grid-template-areas: 
+    "foto-perfil-area cabecera-perfil-area"
+    "foto-perfil-area formulario-perfil-area";    
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cabecera-perfil-area {
+    grid-area: cabecera-perfil-area;
+}
+
+.image {
+    min-width: 150px;
+    max-width: 200px;
+
+    width: 100%;
+    height: auto;
+}
+
+.foto-perfil-area {
+    grid-area: foto-perfil-area;
+}
+
+.formulario-perfil-area {
+    grid-area: formulario-perfil-area;
+}

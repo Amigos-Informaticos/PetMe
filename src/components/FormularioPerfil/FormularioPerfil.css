@@ -1,0 +1,68 @@
+.perfil .form-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;    
+    
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 70%;
+}
+
+.form-signup {    
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0.7rem;
+    column-gap: 0.5rem;
+    
+    justify-items: center;
+    align-items: center;    
+}
+
+.form-perfil .row.email, .form-perfil .row.password, .form-perfil .row.nombre {
+    grid-column: span 2;
+    width: 80%;
+
+}
+
+.form-perfil .row.apellido-paterno , .form-perfil .row.apellido-materno, .form-perfil .row.fecha-nacimiento, .form-perfil .row.sexo{
+    width: 80%;    
+}
+
+.form-perfil .row.apellido-paterno, .form-perfil .row.fecha-nacimiento{
+    justify-self: end;
+}
+
+.form-perfil .row.apellido-materno , .form-perfil .row.sexo{
+    justify-self: start;
+}
+
+.form-perfil .input[type="email"], .form-perfil .input[type="password"], .form-perfil .input[type="text"], .form-perfil .input[type="date"]{
+    padding: 0.7rem;
+    width: 100%;
+}
+
+.form-perfil .input[type="text"].col-1 {
+    grid-column: span 1;
+}
+
+.form-perfil .button-container {
+    margin-top: 2rem;
+    grid-column: span 2;
+    display:flex;
+    flex-grow: 0;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}

@@ -1,8 +1,8 @@
 .header-signup {    
-    width: 80%;
+    width: 80%;    
 }
 
-.form-container {
+.registro .form-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -14,21 +14,44 @@
 }
 
 .form-signup {    
-    width: 80%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 25px 40px 25px 40px 25px 40px 25px 40px 25px 40px;
+    row-gap: 0.7rem;
+    column-gap: 0.5rem;
+    
+    justify-items: center;
+    align-items: center;    
 }
 
-.form-signup .input[type="email"], .form-signup .input[type="password"], .form-signup .input[type="text"] {
+.form-signup .row.email, .form-signup .row.password, .form-signup .row.nombre {
     grid-column: span 2;
+    width: 80%;
+
 }
 
-.input[type="text"].col-1 {
+.form-signup .row.apellido-paterno , .form-signup .row.apellido-materno, .form-signup .row.fecha-nacimiento, .form-signup .row.sexo{
+    width: 80%;    
+}
+
+.form-signup .row.apellido-paterno, .form-signup .row.fecha-nacimiento{
+    justify-self: end;
+}
+
+.form-signup .row.apellido-materno , .form-signup .row.sexo{
+    justify-self: start;
+}
+
+.form-signup .input[type="email"], .form-signup .input[type="password"], .form-signup .input[type="text"], .form-signup .input[type="date"]{
+    padding: 0.7rem;
+    width: 100%;
+}
+
+.form-signup .input[type="text"].col-1 {
     grid-column: span 1;
 }
 
-.button-container {
+.form-signup .button-container {
     margin-top: 2rem;
     grid-column: span 2;
     display:flex;
@@ -41,8 +64,4 @@
 .radio-container {
     display: flex;
     justify-content: space-evenly;
-}
-
-p {
-    grid-column: span 2;
 }

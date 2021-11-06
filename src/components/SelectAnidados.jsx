@@ -1,13 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import SelectList from './SelectList';
 
-const SelectAnidados = ({handleChange }) => {
+const SelectAnidados = ({handleChange, required}) => {
     const [state, setState] = useState('');
     const [town, setTown] = useState('');
-    const [suburb, setSuburb] = useState('');
 
-    const TOKEN = '802a9697-db2f-469c-beeb-3fe84e1e585b';
-    //get_estadoss
+    const TOKEN = '6ee6fb7c-5902-4281-8a40-41b9d9a89eb9';
+    //TODO get_estadoss
     const stateURL = `https://api.copomex.com/query/get_estadosss?token=${TOKEN}`;
 
     const handleState = (e) => {
@@ -19,16 +18,10 @@ const SelectAnidados = ({handleChange }) => {
         setTown(e.target.value);
         handleChange(e);
     }
-    
-    const handleSuburb = (e) => {
-        setSuburb(e.target.value);
-        handleChange(e);
-    }
     return (
         <>                      
-            <SelectList title="Estado" name="estado" url={stateURL} handleChange = {handleState}/>
-            {state && <SelectList title="municipios" name="municipio" url={`https://api.copomex.com/query/get_municipio_por_estado/${state}?token=${TOKEN}`} handleChange = {handleTown}/>}
-            {town && <SelectList title="colonia" url={`https://api.copomex.com/query/get_colonia_por_municipio/${town}?token=${TOKEN}`} handleChange = {handleSuburb}/>}            
+            <SelectList title="Estado" name="estado" url={stateURL} handleChange = {handleState} required/>
+            {state && <SelectList title="Municipios" name="localidad" url={`https://api.copomex.com/query/get_municipio_por_estado/${state}?token=${TOKEN}`} handleChange = {handleTown} required/>}            
         </>
     )
 }

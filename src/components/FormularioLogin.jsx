@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import {useForm} from '../hooks/useForm';
 import { Loader } from './Loader';
-import { Message } from './Message';
+import {Redirect} from 'react-router-dom';
 import './FormularioLogin.css';
 import { Link } from 'react-router-dom';
 import { codeMessage } from '../helpers/CodeMessage';
 import Validator from '../helpers/Validators';
+import Swal from 'sweetalert2';
+import AuthContext from '../context/AuthContext';
+import useSwal from '../hooks/useSwal';
 
 const initialForm = {    
     email:'',
@@ -26,12 +29,36 @@ const validarFormulario = (formulario) => {
 }
 
 const FormularioLogin = () => {
-    const {form, error, loading, response, statusCode, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validarFormulario, 'login');    
+    const {form, error, loading, response, statusCode, handleChange, handleBlur, handleSubmit, bodyResponse} = useForm(initialForm, validarFormulario, 'login');            
+    const {setStatusCode} =  useSwal('login');
+    const {auth, isAuth, signin} = useContext(AuthContext);    
+    useEffect(() => {
+        if(response) {            
+            if(statusCode >= 200 && statusCode < 400) {
+                if(statusCode === 200) {                                                            
+                    signin(bodyResponse.id, bodyResponse.token);                    
+                    isAuth();
+                    setStatusCode(statusCode);
+                    return(<Redirect to="/"/>);
+                }
+                setStatusCode(statusCode);
+            } else {
+                Swal.fire({
+                    icon: 'info',
+                    title:codeMessage.login[statusCode]
+                });
+            }            
+        }
+    }, [response, setStatusCode, statusCode, isAuth, signin]);
     return (
+        <>
+        {auth?
+        <Redirect to="/"/>:
         <div className="form-container">
             <header className="header-login">
                 <h2>Iniciar sesión</h2>
-            </header>        
+            </header>
+            
             <form onSubmit={handleSubmit} className="form-login">
                 <p className="row">
                     <label htmlFor="email">Correo electronico</label>
@@ -48,11 +75,10 @@ const FormularioLogin = () => {
                 </p>
                 <p className="row center">¿No tienes una cuenta? <Link to="/signup" className="link-signup">Registrate</Link></p>
             </form>
-            {loading && <Loader />}
-            {response && <Message msg={codeMessage[statusCode]} backgroundColor = "#198754"/>}
-            {!error}
-        </div>
-    )
+            {loading && <Loader />}                        
+        </div>}        
+        </>
+    );
 }
 
 export default FormularioLogin;

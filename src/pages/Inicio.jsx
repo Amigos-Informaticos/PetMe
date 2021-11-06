@@ -1,12 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const Inicio = () => {
     return (
-        <article className="main login">
-            
-
+        <article className="main inicio">
         </article>
-    )
+    );
 }
 
-export default Inicio
+export default Inicio;

@@ -8,21 +8,36 @@ import MenuLateral from './components/MenuLateral';
 import Login from './pages/Login';
 import Registro from './pages/Registro';
 import Inicio from './pages/Inicio';
-import Refugio from './pages/Refugio';
+import RegistroRefugio from './pages/RegistroRefugio';
+import { AuthProvider } from './context/AuthContext';
+import RutaPrivada from './components/RutaPrivada';
+import NotFound from './pages/NotFound';
+import InicioRefugios from './pages/InicioRefugios';
+import Perfil from './pages/Perfil/Perfil';
 
 function App() {  
   return (
-    <div className="App">      
-      <Router>
-        <MenuCabecera />
-        <MenuLateral />        
-        <Switch>
-          <Route exact path="/login"><Login layoutPosition="main"/></Route>
-          <Route exact path="/signup"><Registro layoutPosition="main"></Registro></Route>
-          <Route exact path="/refugio"><Refugio layoutPosition="main"></Refugio></Route>
-          <Route exact path="/" component={Inicio}/>
-        </Switch>
-      </Router>
+    <div className="App">
+      <AuthProvider>
+        <Router>
+          <MenuCabecera />
+          {/*TODO corregir desmontado y montado de MenuLateral para que compruebe el id*/}
+          <MenuLateral />        
+          <Switch>
+            <Route exact path="/login"><Login layoutPosition="main"/></Route>
+            <Route exact path="/signup"><Registro layoutPosition="main"></Registro></Route>
+            <Route exact path="/refugios"><InicioRefugios layoutPosition="main"/></Route>
+            <RutaPrivada exact path="/registrar-refugio">
+              <RegistroRefugio layoutPosition="main" />
+            </RutaPrivada>
+            <RutaPrivada exact path="/perfil/:id">
+              <Perfil layoutPosition="main"/>
+            </RutaPrivada>
+            <Route exact path="/" component={Inicio}/>
+            <Route path="*" component={NotFound}/>
+          </Switch>
+        </Router>
+      </AuthProvider>      
     </div>
   );
 }

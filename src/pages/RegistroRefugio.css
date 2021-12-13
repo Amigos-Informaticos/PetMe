@@ -1,0 +1,10 @@
+.refugio {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.form-container > header {
+    margin-bottom: 1rem;
+}

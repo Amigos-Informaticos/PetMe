@@ -1,0 +1,30 @@
+.registro-adoptable {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.2fr 2fr;
+    grid-template-areas: 
+    "cabecera-mascota-area cabecera-mascota-area"
+    "foto-mascota-area formulario-mascota-registro-area";    
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cabecera-mascota-area {
+    grid-area: cabecera-mascota-area;
+}
+
+.image {
+    min-width: 150px;
+    max-width: 200px;
+
+    width: 100%;
+    height: auto;
+}
+
+.foto-mascota-area {
+    grid-area: foto-mascota-area;
+}
+
+.formulario-mascota-registro-area {
+    grid-area: formulario-mascota-registro-area;
+}

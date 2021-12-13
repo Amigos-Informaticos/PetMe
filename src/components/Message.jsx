@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Message = ({msg, backgroundColor}) => {
+const Message = ({className, msg, backgroundColor}) => {
     let styles = {
         padding: '1rem',
         marginBottom: '1rem',
         textAlign: 'center',
         backgroundColor,
-        fontWeight: 'bold',
-        
+        fontWeight: 'bold',                
     }
     return (
-        <div style = {styles}>
+        <div className={className} style={styles}>
             <p>{msg}</p>
         </div>
     )

@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import FormularioLogin from '../components/FormularioLogin';
 import './Login.css';
 
@@ -11,5 +11,9 @@ const Login = ({layoutPosition}) => (
     </article>
   </>
 );
+
+Login.propTypes = {
+  layoutPosition: PropTypes.string,
+};
 
 export default Login;

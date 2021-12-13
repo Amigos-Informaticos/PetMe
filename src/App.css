@@ -25,10 +25,6 @@
 
 }
 
-.input:valid {
-  border: 1px solid green;
-}
-
 .button {
   border: none;
   border-radius: 15px;

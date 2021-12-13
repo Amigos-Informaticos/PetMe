@@ -1,0 +1,37 @@
+.refugio .form-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    border: 1px solid black;
+    border-radius: 25px;
+    min-height: 80%;
+    width: 50%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.form-refugio-registro {    
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem 0.5rem;
+
+    justify-items: center;
+    align-items: center;
+}
+
+.form-refugio-registro .input {
+    padding: 0.7rem;
+    width: 100%;
+}
+
+.form-refugio-registro .row{
+    width: 100%;
+}
+
+.form-refugio-registro .row.nombre, .form-refugio-registro .row.direccion, .form-refugio-registro .row.boton-registrar{
+    grid-column: span 2;
+}

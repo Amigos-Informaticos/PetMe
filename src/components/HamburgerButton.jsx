@@ -2,10 +2,11 @@ import React from 'react';
 import '../css/hamburger.css';
 import PropTypes from 'prop-types';
 
-const HamburgerButton = ({hamburgerButton, panel, panelOption}) => {
-
+const HamburgerButton = ({hamburgerButton, panel, panelOption, menuLateral, setMenuLateral}) => {
     
-    const handleHamburger = ({target}) => {       
+    const handleHamburger = async ({target}) => {
+      if(!menuLateral) {
+        await setMenuLateral(true);
         if (
           target.matches(hamburgerButton) ||
           target.matches(`${hamburgerButton} *`)
@@ -16,9 +17,13 @@ const HamburgerButton = ({hamburgerButton, panel, panelOption}) => {
     
         if (target.matches(panelOption)) {
           removePanel(panel, hamburgerButton);
-        }
-      };    
-    
+        }        
+      } else {
+        await setMenuLateral(false)
+      }
+         
+    };
+
     const togglePanel = (panelSelector) => {
       document.querySelector(panelSelector).classList.toggle('is-active');
     };

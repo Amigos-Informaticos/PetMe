@@ -5,12 +5,12 @@ import AuthContext from '../context/AuthContext';
 import HamburgerButton from './HamburgerButton';
 import './MenuCabecera.css';
 
-const MenuCabecera = () => {
+const MenuCabecera = ({menuLateral, setMenuLateral}) => {
   const {auth, signout} = useContext(AuthContext);
   return(
   <>    
     <header className = "header">
-    <HamburgerButton panel=".panel" hamburgerButton=".hamburger-button" panelOption=".panel-options"/>
+    <HamburgerButton panel=".panel" hamburgerButton=".hamburger-button" panelOption=".panel-options" setMenuLateral={setMenuLateral} menuLateral={menuLateral}/>
       <img src={logoCabecera} alt="hueso de perro"/>
       <nav className="option-group">
         {auth ? 

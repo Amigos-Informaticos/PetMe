@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom';
 import { useHistory } from "react-router";
 import { Loader } from "../Loader";
 import { Message } from "../Message";
-import OverViewRefugio from "../OverViewRefugio/OverViewRefugio";
+import OverViewRefugio from "../OverviewRefugio/OverviewRefugio";
 import "./ContenidoRefugios.css";
 
 
@@ -16,7 +16,7 @@ const ContenidoRefugios = ({
     loading,
 }) => {
     const history = useHistory();
-    
+
     const handleClickOverview = (event, id_refugio) => {
         history.push(`/refugios/${id_refugio}`);
     }

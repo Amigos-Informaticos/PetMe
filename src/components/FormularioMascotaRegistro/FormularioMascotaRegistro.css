@@ -1,0 +1,62 @@
+.registro .form-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  border: 1px solid black;
+  border-radius: 25px;
+  width: 70%;
+}
+
+.form-registro-adoptable {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 0.7rem;
+  column-gap: 0.5rem;
+
+  justify-items: center;
+  align-items: center;
+}
+
+.form-registro-adoptable .row.nombre-mascota,
+.form-registro-adoptable .row.descripcion,
+.form-registro-adoptable .row.raza-aparente, 
+.form-registro-adoptable .row.esterilizada,
+.form-registro-adoptable .row.desparacitada,
+.form-registro-adoptable .row.discapacitada {
+  grid-column: span 2;
+  width: 80%;
+}
+
+.form-registro-adoptable .row.especie,
+.form-registro-adoptable .row.sexo {
+  width: 80%;
+}
+
+.form-registro-adoptable .row.especie,
+.form-registro-adoptable .row.fecha-nacimiento {
+  justify-self: end;
+}
+
+.form-registro-adoptable .row.apellido-materno,
+.form-registro-adoptable .row.sexo {
+  justify-self: start;
+}
+
+.form-registro-adoptable .input[type="text"],
+.form-registro-adoptable .input[type="number"] {
+  padding: 0.7rem;
+  width: 100%;
+}
+
+.form-registro-adoptable .button-container {
+  margin-top: 2rem;
+  grid-column: span 2;
+  display: flex;
+  flex-grow: 0;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}

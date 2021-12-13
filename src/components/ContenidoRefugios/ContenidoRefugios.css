@@ -1,0 +1,19 @@
+.contenido-refugios {    
+    width: 100%;
+}
+
+.grid-refugios {
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-auto-flow: dense;
+
+    justify-items: center;
+    align-items: center;
+
+    row-gap: 2rem;
+}
+
+.span-all {
+    grid-column: 1 / -1;
+}

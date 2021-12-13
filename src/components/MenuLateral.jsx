@@ -6,14 +6,15 @@ import './MenuLateral.css';
 
 const MenuLateral = () => {
     const {auth} = useContext(AuthContext);
-    const {value:id, setValue:setId} = useSessionStorage('id');
+    const {value:id} = useSessionStorage('id');   
+    
      
     return (
         <aside className="panel aside-1">
             <nav className="nav-menu">
-                {auth && <Link to={`/perfil/${id}`}>Mi perfil</Link>}                                
-                <Link to="/refugios">Refugios</Link>
-                <Link to="/mascotas">Mascotas</Link>
+                {auth && <Link class='panel-option' to={`/perfil/${id}`}>Mi perfil</Link>}                                
+                <Link class='panel-option' to="/refugios">Refugios</Link>
+                <Link class='panel-option' to="/mascotas">Mascotas</Link>                
             </nav>                        
         </aside>
     )

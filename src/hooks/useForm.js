@@ -32,10 +32,16 @@ export const useForm = (initialForm, validateForm, endpoint = '', token = null) 
       });    
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, isMultipart = false) => {
     event.preventDefault();
     if (Object.keys(error).length === 0) {
-      setLoading(true);
+      setLoading(true);      
+      let formData = new FormData();
+      if(isMultipart){
+        for(let [key, value] of Object.entries(form)) {          
+          formData.append(key, value);
+        }        
+      }
       connection()
         .post(`https://amigosinformaticos.ddns.net:42070/${endpoint}`, {
           headers: {

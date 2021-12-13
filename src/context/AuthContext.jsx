@@ -6,22 +6,26 @@ const initialUser = {
     nombre: '',
     email: ''
 };
-const initialAuth = true;
+let initialId = null;
+const initialAuth = false;
 
 const AuthContext = createContext();
 
 const AuthProvider = ({children}) => {
     const [auth, setAuth] = useState(initialAuth);
     const [user, setUser] = useState(initialUser);
+    const [id, setId] = useState(initialId);
     const [token, setToken] = useState(initialToken);
 
     const isAuth = () => {
         if(sessionStorage.getItem('token') && sessionStorage.getItem('id')) {
             setAuth(true);
             setToken(sessionStorage.getItem('token'));
+            setId(sessionStorage.getItem('id'));
         }else{
             setAuth(false);
             setToken(null);
+            setId(null);
             setUser(null);
         }
    };
@@ -40,6 +44,7 @@ const AuthProvider = ({children}) => {
     const data = {
         auth,
         user,
+        id,
         token,
         isAuth,
         signin,

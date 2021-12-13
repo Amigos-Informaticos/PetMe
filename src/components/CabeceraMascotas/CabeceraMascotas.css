@@ -1,0 +1,55 @@
+.cabecera {
+    grid-area: cabecera;
+}
+
+.cabecera-mascotas {
+    width: 80%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0.5rem;
+    
+    align-items: center;
+
+}
+
+.buscador-mascotas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: span 2;
+    border: 3px solid black;
+}
+
+.buscador-mascotas > img {
+    margin-right: 16px;
+}
+
+.input-buscador-mascotas {
+    padding: 1rem;
+    width: 80%;    
+    border: none;
+    border-radius: inherit;
+}
+
+.button-dar-en-adopcion {
+    display: flex;
+    justify-content: space-between;  
+    padding: 0.5rem 0.5rem;
+    width: 80%;
+
+    justify-self: end;
+
+}
+
+.button-filtro {
+    background-color: #FFE268;
+}
+
+.filtros-mascotas {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}

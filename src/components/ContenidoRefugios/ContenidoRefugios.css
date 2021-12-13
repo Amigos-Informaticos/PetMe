@@ -14,43 +14,6 @@
     row-gap: 2rem;
 }
 
-.carta {
-    border: 1px solid #000;
-    border-radius: 15px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
-}
-
-.refugio-item {
-    display: flex;
-    justify-content: space-between;
-   }
-   
-
-.refugio-item.carta {    
-    width: 450px;
-    height: 200px;
-
-}
-
-.detalles-refugio {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-
-    align-items: center;
-    padding-left: 1rem;
-}
-
-/*Titulo del refugio*/
-.detalles-refugio > span:nth-child(1) {
-    font-size: 1.5rem;
-    grid-column: span 2;    
-}
-
-.imagen-refugio > img {
-    border-radius: 0 15px 15px 0;
-}
-
 .span-all {
     grid-column: 1 / -1;
 }

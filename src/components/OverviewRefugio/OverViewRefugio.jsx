@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './OverviewRefugio.css';
 
-const OverViewRefugio = ({titulo, direccion, estado, localidad, telefono}) => {
+const OverViewRefugio = ({id_refugio, titulo, direccion, estado, localidad, telefono, handleClickOverview}) => {
     return (
-        <article className="refugio-item carta">
-            <section className="detalles-refugio">
-                <span>{titulo}</span>
+        <article data-id={id_refugio} className="refugio-item carta">
+            <section className="detalles-refugio" onClick={(event)=>{handleClickOverview(event, id_refugio)}}>
+                <h3>{titulo}</h3>
                 <b>Dirección</b><address>{direccion}</address>
                 <b>Ubicación</b><span>{`${estado}, ${localidad}`}</span>
                 <b>Telefono</b><span>{telefono}</span>                                                        

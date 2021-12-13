@@ -39,6 +39,11 @@ const InicioRefugios = ({layoutPosition}) => {
     }
 
     useEffect(()=>{
+        if(query.has('nombre')){
+            console.log(query);
+
+        }
+        console.log('search', search);
         console.log(URL+search);              
         
         handleUrl(URL+search);
@@ -55,7 +60,7 @@ const InicioRefugios = ({layoutPosition}) => {
         <article className={`inicio-refugios ${layoutPosition}`}>            
             <CabeceraRefugios layoutPosition="cabecera" titulo="Refugios" refugios={refugios} handleRefugios={setRefugios} handleUrl={handleUrl}/>
             <ContenidoRefugios layoutPosition="contenido" refugios={refugios} handleRefugios={setRefugios} loading={loading}/>
-            <PaginadorRefugios handleAnterior={handleAnterior} handleSiguiente={handleSiguiente}/>
+            <PaginadorRefugios pagina={pagina} handleAnterior={handleAnterior} handleSiguiente={handleSiguiente}/>
         </article>
     );
 }

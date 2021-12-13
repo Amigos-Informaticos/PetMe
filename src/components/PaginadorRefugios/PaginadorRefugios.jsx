@@ -1,12 +1,19 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-const PaginadorRefugios = ({handleAnterior, handleSiguiente}) => {
-    return (
-        <nav className="paginador-refugios">
-            <button onClick={handleAnterior}>Prev</button>
-            <button onClick={handleSiguiente}>Siguiente</button>
-        </nav>
-    )
-}
+const PaginadorRefugios = ({ pagina, handleAnterior, handleSiguiente }) => {
+  return (
+    <nav className="paginador-refugios">
+      {pagina > 0 && <button onClick={handleAnterior}>Prev</button>}
+      <button onClick={handleSiguiente}>Siguiente</button>
+    </nav>
+  );
+};
+
+PaginadorRefugios.propTypes = {
+  pagina: PropTypes.number,
+  handleAnterior: PropTypes.func,
+  handleSiguiente: PropTypes.func,
+};
 
 export default PaginadorRefugios;
